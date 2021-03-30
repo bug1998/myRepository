@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双色球号码组随机生成器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        红球：{{red1}},{{red2}},{{red3}},{{red4}},{{red5}},{{red6}} <br>
+        蓝球：{{blue1}}
+        <button
+            @click="red1 = Math.ceil(Math.random()*10);red2 = Math.ceil(Math.random()*10);red3 = Math.ceil(Math.random()*10);red4 = Math.ceil(Math.random()*10);red5 = Math.ceil(Math.random()*10);red6 = Math.ceil(Math.random()*10);blue1 = Math.ceil(Math.random()*10);">号码随机生成器</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    red1: '',
+                    red2: '',
+                    red3: '',
+                    red4: '',
+                    red5: '',
+                    red6: '',
+                    blue1: '',
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
