@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>985-211大学判断</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        985,211高校：清华大学、北京大学、复旦大学<br>
+
+        211高校：东华大学、南京理工大学、大连理工大学、西安电子科技大学<br><br><br>
+
+
+        请输入你要查询的高校：
+        <input v-model="university"><br>
+
+
+        您查询的高校属于：
+        <p v-if="university == ''">null</p>
+        <p v-else-if=" university=='清华大学' || university == '北京大学' || university == '复旦大学'">985,211高校</p>
+
+        <p
+            v-else-if="university == '东华大学' || university == '南京理工大学' || university == '大连理工大学' || university == '西安电子科技大学'">
+            211高校</p>
+
+
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+
+
+            data() {
+                return {
+                    university: ''
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
