@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>月份查询</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			请输入你要查询的月份：<br />
+			<input v-model="month" />
+			<br />
+			
+			该月份{{month}}有{{monthDay[month-1]}}天
+			
+		</div>
+		
+		<script>
+			new Vue({
+				el: '#app',
+				
+				data(){
+					
+					return{
+						month:'',
+						monthDay:[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+						
+					}	
+					
+				}
+			})
+		</script>
+		
+	</body>
+</html>

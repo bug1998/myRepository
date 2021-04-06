@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>输出JSON信息</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			
+			1哈佛大学<br />
+			2牛津大学<br />
+			3耶鲁大学<br />
+			4剑桥大学
+			<br />
+			请输入以上您要查询的高校：<br />
+			<input v-model="search" /><br />
+			
+			查询的{{schools[search-1].name}}位于：{{schools[search-1].local}}
+		</div>
+		
+		
+		<script>
+			new Vue({
+				el: '#app',
+				data(){
+					return{
+						search: '1',
+						schools:[
+							{
+								name: '哈佛大学', local:'美国马萨诸塞州剑桥市'
+							},
+							{
+								name: '牛津大学', local:'英国牛津'
+							},
+							{
+								name: '耶鲁大学', local:'美国康涅狄格州南部纽黑文市'
+							},
+							{
+								name: '剑桥大学', local:'英国英格兰东部地区剑桥镇'
+							}
+						]
+					}
+				}
+			})
+		</script>
+		
+		
+	</body>
+</html>
