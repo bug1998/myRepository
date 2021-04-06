@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>输出JSON信息</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<input v-model="num"/>
+			
+			<p v-for="c in codes" v-if="num == c.code">
+				
+				
+					{{c.code}}{{c.country}}{{c.local}}
+			
+				
+				
+				<!-- {{codes[num-1].code}}{{codes[num-1].country}}{{codes[num-1].local}} -->
+			</p>
+			
+		</div>
+		
+		
+		<script>
+			new Vue({
+				el: '#app',
+				data(){
+					return{
+						num: '',
+						codes: [
+							{code: '1',country: '它表示美国', local:'首都为：华盛顿'},
+							{code: '44',country: '它表示英国', local:'首都为：伦敦'},
+							{code: '86',country: '它表示中国', local:'首都为：北京'}
+						],
+						
+					}
+				}
+			})
+		</script>
+		
+		
+	</body>
+</html>
