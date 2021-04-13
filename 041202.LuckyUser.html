@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>幸运用户抽奖程序</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="rId = Math.ceil(Math.random()*10)">
+				点击抽奖
+			</button>
+			
+			<p v-for="u in users" v-if="u.id == rId">
+				随机抽取一个小可爱：{{u.username}}
+			</p>
+			
+		</div>
+			
+		<script>
+			new Vue({
+				el: '#app',
+				data(){
+					return{
+						rId:'',
+						users: [
+							{id:'1', username:'古力娜扎'},
+							{id:'2', username:'迪丽热巴'},
+							{id:'3', username:'马尔扎哈'},
+							{id:'4', username:'杨幂'},
+							{id:'5', username:'胡歌'},
+							{id:'6', username:'Van'},
+							{id:'7', username:'刘亦菲'},
+							{id:'8', username:'高圆圆'},
+							{id:'9', username:'工藤静香'},
+							{id:'10', username:'小胖'},
+						
+						]
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>
