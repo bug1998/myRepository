@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>点击验证</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			
+			
+				
+				
+				<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2073439784,2147418910&fm=26&gp=0.jpg" @click="tp()" >
+				
+		</div>
+		
+		<script type="text/javascript">
+			let VM = new Vue({
+				el:'#app',
+				data(){
+					return{
+						
+					}
+				},
+				methods:{
+					tp(){
+						// console.log("X的坐标是：" + event.clientX + "," + "Y的坐标是：" + event.clientY)
+						if(event.clientX > 286 && event.clientX <357 && event.clientY > 214 && event.clientY < 294){
+							alert("验证成功！");
+						}
+					}
+				}
+				
+			})
+		</script>
+	</body>
+</html>
