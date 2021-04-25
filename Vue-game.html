@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找茬游戏</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <img src="./img/game.jpg" alt="" @click="find"><br>
+
+        <p style="color: darkorange;">您当前的总积分是：<b v-text="scores"></b></p>
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    scores: 0,
+                    num1: 0,
+                    num2: 0,
+                    num3: 0
+                }
+            },
+            methods: {
+                find() {
+                    // console.log("X的坐标是：" + event.clientX + "," + "Y的坐标是：" + event.clientY)
+                    if ((event.clientX > 112 && event.clientX < 138
+                        && event.clientY > 232 && event.clientY < 247)
+                        || (event.clientX > 334 && event.clientX < 358
+                            && event.clientY > 231 && event.clientY < 247)) {
+
+                        this.num1++
+
+                        if (this.num1 != 1) {
+                            alert("这个不同您已经找到啦，请找下一个吧！")
+                        } else if (this.num1 = 1) {
+                            alert("恭喜你找到啦！");
+                            this.scores++
+                        }
+                    } else if ((event.clientX > 208 && event.clientX < 231
+                        && event.clientY > 225 && event.clientY < 240)
+                        || (event.clientX > 428 && event.clientX < 451
+                            && event.clientY > 225 && event.clientY < 240)) {
+
+                        this.num2++
+                        if (this.num2 != 1) {
+                            alert("这个不同您已经找到啦，请找下一个吧！")
+                        } else if (this.num2 = 1) {
+                            alert("恭喜你找到啦！");
+                            this.scores++
+                        }
+                    } else if ((event.clientX > 44 && event.clientX < 80
+                        && event.clientY > 229 && event.clientY < 262)
+                        || (event.clientX > 281 && event.clientX < 302
+                            && event.clientY > 226 && event.clientY < 262)) {
+
+                        this.num3++
+                        if (this.num3 != 1) {
+                            alert("这个不同您已经找到啦，请找下一个吧！")
+                        } else if (this.num3 = 1) {
+                            alert("恭喜你找到啦！");
+                            this.scores++
+                        }
+                    }
+                    if(this.scores == 3){
+                        alert("恭喜你已经找到所以的不同，顺利通关！")
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
