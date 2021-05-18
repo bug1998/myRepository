@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.7/vue.js"></script>
+    <title>画长方形</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="800px" height="500px"></canvas>
+    <div id="app">
+        <input type="button" value="你点我一下试试看" @click="show"><br>
+        输入长的值：<input type="text" v-model="r"><br>
+        输入宽的值：<input type="text" v-model="rr">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    r: '10',
+                    rr: '30'
+                }
+            },
+            methods: {
+                show() {
+                    let canvas = document.getElementById("myCanvas");
+                    let context = canvas.getContext("2d");
+                    context.beginPath();
+                    context.rect(100, 100, this.r, this.rr)
+                    context.stroke()
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>
